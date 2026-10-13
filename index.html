@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, Nmnm 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff0f5;
+  font-family: Georgia, serif;
+  color: #c65379;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heart {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.heart svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.heart path {
+  fill: #ffc1d6;
+  stroke: #e879a0;
+  stroke-width: 3;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 3s ease forwards;
+}
+
+.heart span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 110px;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  animation: appear 1s ease 2.5s forwards;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: normal;
+  margin: 25px 0 10px;
+}
+
+.subtitle {
+  color: #bd8196;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 14px 28px;
+  border: 1px solid #f0a0bc;
+  border-radius: 30px;
+  background: #f4b0c8;
+  color: white;
+  font-size: 16px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #f4b0c855;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes appear {
+  to { opacity: 1; }
+}
+
+.letter {
+  width: 90%;
+  max-width: 390px;
+  padding: 30px 24px;
+  background: #fffafd;
+  border: 1px solid #f8d4e1;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px #e9a9bf55;
+  animation: appear 1s ease;
+}
+
+.letter h2 {
+  font-size: 27px;
+  font-weight: normal;
+}
+
+.message {
+  color: #8e596d;
+  font-size: 16px;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart-small {
+  font-size: 28px;
+  margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+  <div class="heart">
+    <svg viewBox="0 0 100 100">
+      <path d="M50 88 C40 76 5 54 5 30
+      C5 5 35 0 50 25
+      C65 0 95 5 95 30
+      C95 54 60 76 50 88 Z"/>
+    </svg>
+    <span>Love you<br>nmnm ♡</span>
+  </div>
+
+  <h1>A little something for you ♡</h1>
+  <p class="subtitle">Made with love, just for you.</p>
+
+  <button onclick="openLetter()">
+    Open your letter 💌
+  </button>
+</div>
+
+<div id="letter" class="letter hidden">
+  <div class="heart-small">♡</div>
+  <h2>To my favorite person</h2>
+
+  <div class="message">My love, ♡
+
+I wish I could be there with you,
+to see your smile and make you feel
+how special you are to me.
+
+Even with all the distance between us,
+you still have a place in my heart
+that belongs only to you.
+
+You make ordinary days feel special,
+and I'm so grateful that our paths
+found their way back to each other.
+
+If I could give you one thing,
+it would be the ability to see yourself
+through my eyes.
+
+Maybe then you'd understand
+just how precious you are to me.
+
+I love you, nmnm. ♡</div>
+
+  <div class="heart-small">💗</div>
+  <p class="subtitle">Forever a little piece of my heart.</p>
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("letter").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
